@@ -5,6 +5,7 @@ resource "aws_subnet" "aws_vinginia_public_subnets" {
   # Ip ranges
   cidr_block = element(var.cidr_public_subnet, count.index) 
   availability_zone = element(var.us_availabity_zone, count.index)
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "Subnet-Public : Public Subnet ${count.index + 1}"

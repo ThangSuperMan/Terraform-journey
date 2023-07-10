@@ -8,3 +8,8 @@
 # Make sure that your file .aws/credentials has to have [default] section
 aws ec2 describe-availability-zones --region us-east-1 | jq '.AvailabilityZones[].ZoneName'
 ```
+
+```bash
+# Delete a resource
+terraform destroy -target aws_instance.<ec2_name>
+```
